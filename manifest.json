@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Engage Helper",
+    "version": "1.0.0",
+    "description": "Extension to help give better insight into trait enrichment",
+    "devtools_page": "devtools.html",
+    "permissions": [
+        "webRequest",
+        "storage",
+        "tabs",
+        "clipboardWrite",
+        "clipboardRead"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+      ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}
