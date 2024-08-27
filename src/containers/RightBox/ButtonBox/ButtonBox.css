@@ -9,6 +9,10 @@
 
 }
 
+.button:hover {
+    border: 1px solid black;
+}
+
 .button:active {
     background-color: #e6e6e6;
     color: black;
