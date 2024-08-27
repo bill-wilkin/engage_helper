@@ -6,7 +6,7 @@ const MainContainer = () => {
 
     return (
         <>
-            <h1>Hello World</h1>
+            <h1>Hello World 2</h1>
             {/* <h2>Current Space: {state.currentSpace?.id}</h2> */}
         </>
     )
