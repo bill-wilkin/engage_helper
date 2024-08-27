@@ -1,4 +1,40 @@
-#label-box {
+.json-textbox{
+    background-color: #c7c6c3;
+    display: flex;
+    flex-direction: column;
+}
+
+.copy-button{
+    background-color: #c7c6c3;
+    width: 5vw;
+    height: 5vh;
+    padding: 0;
+    margin: 0;
+    align-self: flex-end;
+}
+
+.payload-text{
+    color: black;
+}
+
+pre code {
+    background: #c7c6c3;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    white-space: break-spaces;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+    width: 50vw;
+    height: 40vh;
+  }
+
+  #label-box {
     background: #e5e5e5;
     display: flex;
     justify-content: space-between;
@@ -14,3 +50,4 @@
     font-weight: 400;
     font-style: normal;
 }
+
