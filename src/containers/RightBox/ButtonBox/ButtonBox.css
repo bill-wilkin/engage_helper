@@ -1,8 +1,27 @@
 #button-box {
     display: flex;
+    /* align-items: flex-start; */
 }
+
+.button {
+    background-color: #3f8266;
+    margin: 0.3rem;
+
+}
+
+.button:hover {
+    border: 1px solid black;
+}
+
+.button:active {
+    background-color: #e6e6e6;
+    color: black;
+}
+
 
 #refresh-button {
     margin-left: 3rem;
     /* change to flex end */
+    /* align-self: flex-end; */
+    /* margin-right: auto; */
 }

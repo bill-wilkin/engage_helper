@@ -5,13 +5,13 @@ const ButtonBox = () => {
     return (
         <>
             <div id='button-box'>
-                <button>Track</button>
-                <button>Identify</button>
-                <button>Group</button>
-                <button id='refresh-button'>Refresh</button>
+                <button className='button'>Track</button>
+                <button className='button'>Identify</button>
+                <button className='button'>Group</button>
+                <button id='refresh-button' className='button'>Refresh</button>
             </div>
         </>
     )
 }
 
-export default ButtonBox
+export default ButtonBox;
