@@ -1,4 +1,5 @@
 import { useCustomContext } from "../state-management/app-context";
+import Overview from "./RightBox/Overview/Overview";
 
 const MainContainer = () => {
 
@@ -6,7 +7,7 @@ const MainContainer = () => {
 
     return (
         <>
-            <h1>Hello World 2</h1>
+            <Overview />
             {/* <h2>Current Space: {state.currentSpace?.id}</h2> */}
         </>
     )
