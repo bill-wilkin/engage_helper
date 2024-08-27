@@ -5,11 +5,15 @@
 
 .button {
     background-color: #3f8266;
+    margin: 0.3rem;
+
 }
 
-button {
-    margin: 0.3rem;
+.button:active {
+    background-color: #e6e6e6;
+    color: black;
 }
+
 
 #refresh-button {
     margin-left: 3rem;
