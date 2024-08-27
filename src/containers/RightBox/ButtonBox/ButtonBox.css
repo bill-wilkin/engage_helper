@@ -1,8 +1,19 @@
 #button-box {
     display: flex;
+    /* align-items: flex-start; */
+}
+
+.button {
+    background-color: #3f8266;
+}
+
+button {
+    margin: 0.3rem;
 }
 
 #refresh-button {
     margin-left: 3rem;
     /* change to flex end */
+    /* align-self: flex-end; */
+    /* margin-right: auto; */
 }
