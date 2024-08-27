@@ -5,9 +5,9 @@ const IconCopy16 = (props) => {
   return (
     <svg
       viewBox="0 0 16 16"
-      fill="currentColor"
-      height="1em"
-      width="1em"
+      fill="black"
+      height="1.5em"
+      width="1.5em"
       {...props}
     >
       <path

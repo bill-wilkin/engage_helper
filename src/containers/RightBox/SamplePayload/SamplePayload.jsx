@@ -1,5 +1,4 @@
 import './SamplePayload.css'
-import copyIcon from './../../../assets/copy-icon.png'
 import IconCopy16 from './Icon'
 
 export const SamplePayload = () => {
