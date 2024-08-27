@@ -1,0 +1,48 @@
+.json-textbox{
+    background-color: #c7c6c3;
+}
+
+.copy-button{
+    background-color: #c7c6c3;
+    width: 5vw;
+    height: 5vh;
+    padding: 0;
+    margin: 0;
+}
+
+.copy-icon{
+    color: black;
+}
+
+.payload-text{
+    color: black;
+}
+
+/* code {
+    font-family: Monaco, monospace;
+    line-height: 100%;
+    background-color: #eee;
+    padding: 0.2em;
+    letter-spacing: -0.05em;
+    word-break: normal;
+    border-radius: 5px;
+  } */
+
+pre code {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    white-space: break-spaces;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+    width: 50vw;
+    height: 40vh;
+  }
