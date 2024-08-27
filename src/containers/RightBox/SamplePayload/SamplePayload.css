@@ -1,0 +1,15 @@
+#label-box {
+    background: #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.label {
+    color: black;
+    margin: 5px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}

@@ -14,4 +14,4 @@ const ButtonBox = () => {
     )
 }
 
-export default ButtonBox
+export default ButtonBox;
