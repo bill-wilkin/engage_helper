@@ -1,11 +1,18 @@
 import ButtonBox from "../ButtonBox/ButtonBox"
 import { SamplePayload } from "../SamplePayload/SamplePayload"
+import { useState, useEffect } from "react";
 import './Overview.css';
 
 const Overview = () => {
+    const [selectedPayloadType, setSelectedPayloadType] = useState('track');
+
+    useEffect(() => {
+        alert(selectedPayloadType);
+    }, [selectedPayloadType])
 
     const handleButtonClick = (input) => {
-        alert(input)
+        setSelectedPayloadType(input);
+        // alert(selectedPayloadType);
     }
 
     return (

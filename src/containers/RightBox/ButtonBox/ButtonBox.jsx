@@ -4,22 +4,22 @@ const ButtonBox = ({handleButtonClick}) => {
 
     const handleTrackButtonClick = (e) => {
         e.preventDefault();
-        handleButtonClick('Track Clicked');
+        handleButtonClick('track');
     }
 
     const handleIdentifyButtonClick = (e) => {
         e.preventDefault();
-        handleButtonClick('Identify Clicked');
+        handleButtonClick('identify');
     }
 
     const handleGroupButtonClick = (e) => {
         e.preventDefault();
-        handleButtonClick('Group Clicked');
+        handleButtonClick('group');
     }
 
     const handleRefreshButtonClick = (e) => {
         e.preventDefault();
-        handleButtonClick('Re Clicked');
+        alert('Refresh Clicked');
     }
 
     return (
