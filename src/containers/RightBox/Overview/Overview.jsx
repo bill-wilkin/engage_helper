@@ -1,15 +1,14 @@
 import ButtonBox from "../ButtonBox/ButtonBox"
 import { SamplePayload } from "../SamplePayload/SamplePayload"
-import { InfoBox } from "../InfoBox/InfoBox"
+import './Overview.css';
 
 const Overview = () => {
 
     return (
-        <>
+        <div id='right-overview'>
             <ButtonBox />
             <SamplePayload />
-            <InfoBox />
-        </>
+        </div>
     )
 }
 
