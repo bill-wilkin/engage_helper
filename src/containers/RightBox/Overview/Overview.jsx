@@ -1,5 +1,6 @@
-import ButtonBox from "../ButtonBox/ButtonBox";
-import SamplePayload from "../SamplePayload/SamplePayload";
+import ButtonBox from "../ButtonBox/ButtonBox"
+import { SamplePayload } from "../SamplePayload/SamplePayload"
+import { InfoBox } from "../InfoBox/InfoBox"
 
 const Overview = () => {
 
@@ -7,6 +8,7 @@ const Overview = () => {
         <>
             <ButtonBox />
             <SamplePayload />
+            <InfoBox />
         </>
     )
 }
