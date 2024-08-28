@@ -1,5 +1,7 @@
 import './SamplePayload.css'
 import IconCopy16 from './Icon'
+import GeneratedPayload from './GeneratedPayload'
+
 
 export const SamplePayload = () => {
     return(
@@ -11,7 +13,8 @@ export const SamplePayload = () => {
             <article className='json-textbox'>
             <pre>
                     <code className='payload-text'>
-                        &#123;
+                        <GeneratedPayload/>
+                        {/* &#123;
                         "messageId": "segment-test-message-l1ux2",
                         "timestamp": "2024-08-27T18:20:37.502Z",
                         "type": "track",
@@ -24,7 +27,7 @@ export const SamplePayload = () => {
                             &#125;,
                         "userId": "test-user-ciiss8",
                         "event": "Segment Test Event Name"
-                        &#125;
+                        &#125; */}
                     </code>
                 </pre> 
                 <button className='copy-button'>
