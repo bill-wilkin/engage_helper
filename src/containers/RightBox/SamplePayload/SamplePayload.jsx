@@ -1,6 +1,6 @@
 import './SamplePayload.css'
 import IconCopy16 from './Icon'
-import payload from './Payload'
+import Payload from './Payload'
 
 export const SamplePayload = () => {
     return(
@@ -12,7 +12,7 @@ export const SamplePayload = () => {
             <article className='json-textbox'>
                 <pre>
                     <code className='payload-text'>
-                        {JSON.stringify(payload, null, 2)}
+                    <Payload />
                     </code>
                 </pre> 
                 <button className='copy-button'>
