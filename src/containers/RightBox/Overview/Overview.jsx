@@ -4,9 +4,13 @@ import './Overview.css';
 
 const Overview = () => {
 
+    const handleButtonClick = (input) => {
+        alert(input)
+    }
+
     return (
         <div id='right-overview'>
-            <ButtonBox />
+            <ButtonBox handleButtonClick={handleButtonClick}/>
             <SamplePayload />
         </div>
     )
