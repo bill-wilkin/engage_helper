@@ -2,7 +2,7 @@ import './SamplePayload.css'
 import IconCopy16 from './Icon'
 import Payload from './Payload'
 
-export const SamplePayload = () => {
+export const SamplePayload = ({selectedPayloadType}) => {
     return(
         <>
             <div id='label-box'>
@@ -12,7 +12,7 @@ export const SamplePayload = () => {
             <article className='json-textbox'>
                 <pre>
                     <code className='payload-text'>
-                    <Payload />
+                    <Payload selectedPayloadType={selectedPayloadType}/>
                     </code>
                 </pre> 
                 <button className='copy-button'>

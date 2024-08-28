@@ -7,18 +7,17 @@ const Overview = () => {
     const [selectedPayloadType, setSelectedPayloadType] = useState('track');
 
     useEffect(() => {
-        alert(selectedPayloadType);
+        // alert(selectedPayloadType);
     }, [selectedPayloadType])
 
     const handleButtonClick = (input) => {
         setSelectedPayloadType(input);
-        // alert(selectedPayloadType);
     }
 
     return (
         <div id='right-overview'>
             <ButtonBox handleButtonClick={handleButtonClick}/>
-            <SamplePayload />
+            <SamplePayload selectedPayloadType={selectedPayloadType} />
         </div>
     )
 }
