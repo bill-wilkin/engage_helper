@@ -1,0 +1,37 @@
+#heading {
+    font-size: 1.4em;
+    background-color: #3f8266;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+#info-box {
+    background-color: #028676;
+    margin-bottom: 1em;
+    border-radius: 6px;
+    text-align: left;
+    padding-left: 1em;
+}
+
+svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: #81C2BA;
+    display: block;
+    margin: auto;
+    margin-right: 1em;
+}
+
+#icon-box {
+    display: flex;
+}
+
+ul {
+    margin-top: 0;
+}
+
