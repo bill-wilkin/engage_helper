@@ -1,0 +1,15 @@
+#mapping-instructions {
+    background-color: #3E8266;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0.2rem;
+    padding-right: 0.4rem;
+}
+
+#header {
+    font-size: 1.3em;
+}
+
+#list {
+    text-align: left;
+}
