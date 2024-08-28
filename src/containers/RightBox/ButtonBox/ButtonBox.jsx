@@ -1,4 +1,4 @@
-import ButtonBoxStyle from './ButtonBox.css';
+import './ButtonBox.css';
 
 const ButtonBox = () => {
 
