@@ -18,7 +18,7 @@ const basePayload = {
 
 
 
-const Payload = ({selectedPayloadType, additionalData = { properties: { firstName: "Bob", lastName: "Ross" } }}) => {
+const Payload = ({ traits, selectedPayloadType, additionalData = { properties: { firstName: "Bob", lastName: "Ross" } }}) => {
 
       let payload = {
       ...basePayload,
@@ -27,13 +27,17 @@ const Payload = ({selectedPayloadType, additionalData = { properties: { firstNam
   
 
       if (selectedPayloadType === "track") {
-      payload = {
-        ...payload,
-        properties: {
-          ...basePayload.properties, // Retain initial properties from basePayload
-          ...additionalData.properties, // Merge and override with properties from additionalData
-        }
-      };
+        payload = {
+          ...payload,
+          properties: {
+            ...basePayload.properties, // Retain initial properties from basePayload
+            ...additionalData.properties, // Merge and override with properties from additionalData
+            ...traits //add in specified traits from Trait Activation
+          }
+        };
+
+
+
     } else {
       delete payload.properties;
       payload = {
@@ -42,6 +46,7 @@ const Payload = ({selectedPayloadType, additionalData = { properties: { firstNam
         traits: {
           ...basePayload.traits, // This line is theoretical, as basePayload doesn't initially have traits in your example
           ...additionalData.traits, // Merge and override with traits from additionalData
+          ...traits //add in specified traits from Trait Activation
         }
       };
     }
