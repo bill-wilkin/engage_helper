@@ -1,5 +1,3 @@
-import React from 'react';
-
 const basePayload = {
   type: "track", // Default type, can be overridden by additionalData.type
   context: {
@@ -18,16 +16,17 @@ const basePayload = {
   }
 };
 
-//Needs revision to work with track/identify/group button - for now, this works to generate the payload with traits or properties depending on the type passed in as additional data
-const Payload = ({ additionalData = { type: "track", properties: { firstName: "John", lastName: "Doe" } } }) => {
-  // handle both 'traits' for identify/group and 'properties' for track
-  const generatePayload = () => {
-    let payload = {
+
+
+const Payload = ({selectedPayloadType, additionalData = { properties: { firstName: "John", lastName: "Doe" } }}) => {
+
+      let payload = {
       ...basePayload,
       ...additionalData, // Allows overriding the type and adding properties/traits from additionalData
     };
   
-    if (additionalData.type === "track") {
+
+      if (selectedPayloadType === "track") {
       payload = {
         ...payload,
         properties: {
@@ -36,23 +35,20 @@ const Payload = ({ additionalData = { type: "track", properties: { firstName: "J
         }
       };
     } else {
+      delete payload.properties;
       payload = {
         ...payload,
+        type: selectedPayloadType,
         traits: {
           ...basePayload.traits, // This line is theoretical, as basePayload doesn't initially have traits in your example
           ...additionalData.traits, // Merge and override with traits from additionalData
         }
       };
     }
-  
-    return payload;
-  };
-
-  const payload = generatePayload();
-
   return (
-      <pre>{JSON.stringify(payload, null, 2)}</pre>
-  );
-};
+    <pre>{JSON.stringify(payload, null, 2)}</pre>
+  )
+  
+}
 
 export default Payload;
