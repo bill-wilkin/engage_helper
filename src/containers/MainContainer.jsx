@@ -1,18 +1,25 @@
 import { useCustomContext } from "../state-management/app-context";
 import Overview from "./RightBox/Overview/Overview";
 import LeftOverview from "./LeftBox/LeftOverview/LeftOverview";
+import { useState, useEffect } from "react";
 
 const MainContainer = () => {
 
     const { state, dispatch } = useCustomContext();
+    const [traits, setTraits] = useState(null);  
+    
+    useEffect(() => {
+        if (state.currentTraits) {
+            setTraits(state.currentTraits);
+        }
+    }, [state.currentTraits]);
+    
+
 
     return (
         <div style={{display:"flex", justifyContent:"space-evenly"}}>
-            {/* <h1>{state.currentAudience && state.currentAudience?.id}</h1> */}
-            {/* Note:  I'm using "age" because that was a trait I had in my trait enrichment and if I try to pass the whole object, the whole page won't render */}
-            <p>ALL STATE: {JSON.stringify(state)}</p> 
-            {/* <Overview /> */}
-            {/* <h2>Current Space: {state.currentSpace?.id}</h2> */}
+            <LeftOverview />
+            <Overview traits={traits}/>
         </div>
     )
 }
