@@ -8,10 +8,10 @@ const MainContainer = () => {
 
     return (
         <div style={{display:"flex", justifyContent:"space-evenly"}}>
-            <h1>{state.currentAudience && state.currentAudience?.id}</h1>
+            {/* <h1>{state.currentAudience && state.currentAudience?.id}</h1> */}
             {/* Note:  I'm using "age" because that was a trait I had in my trait enrichment and if I try to pass the whole object, the whole page won't render */}
-            <h1>Current Traits: {state.currentTraits && state.currentTraits?.age}</h1> 
-            <Overview />
+            <p>ALL STATE: {JSON.stringify(state)}</p> 
+            {/* <Overview /> */}
             {/* <h2>Current Space: {state.currentSpace?.id}</h2> */}
         </div>
     )

@@ -24,8 +24,8 @@ export const handleRequest = async (requestURL, requestBody, getState, dispatch)
 
     const actionMap = {
         space: () => !state.currentSpace ? setCurrentSpaceAction(handled.space) : null,
-        audience: () => setCurrentAudienceAction(handled.audience),
-        currentTraits: () => setCurrentTraitsAction(handled.currentTraits)
+        audience: () => !state.currentAudience ? setCurrentAudienceAction(handled.audience) : null,
+        traits: () => setCurrentTraitsAction(handled.traits),
     };
 
     const actions = Object.entries(actionMap)
