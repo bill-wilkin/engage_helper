@@ -21,6 +21,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'captureGraphQL') {
         // Store captured GraphQL data
         capturedData.push(message.data);
-        // console.log('GraphQL data captured:', message.data);
+        console.log('GraphQL data captured:', message.data);
     } 
 });
