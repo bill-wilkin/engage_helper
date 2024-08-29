@@ -18,7 +18,7 @@ const basePayload = {
 
 
 
-const Payload = ({selectedPayloadType, additionalData = { properties: { firstName: "John", lastName: "Doe" } }}) => {
+const Payload = ({selectedPayloadType, additionalData = { properties: { firstName: "Bob", lastName: "Ross" } }}) => {
 
       let payload = {
       ...basePayload,

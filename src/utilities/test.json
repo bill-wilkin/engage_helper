@@ -1,0 +1,1427 @@
+{
+    "data": {
+      "workspace": {
+        "space": {
+          
+          "audience": {
+            "id": "aud_2F5eygdDixqzxrWn8dJBCdpeSfV",
+            "name": "Article Bookmarkers",
+            "engine": "realtime",
+            "definition": {
+              "options": {
+                "ast": {
+                  "children": [
+                    {
+                      "type": "event.count",
+                      "value": "Article Bookmarked"
+                    },
+                    {
+                      "type": "constant.integer",
+                      "value": "1"
+                    }
+                  ],
+                  "type": "operator",
+                  "value": ">="
+                },
+                "ast_optimized": {
+                  "children": [
+                    {
+                      "children": null,
+                      "options": {
+                        "max_count_hint": 1
+                      },
+                      "type": "event.count",
+                      "value": "Article Bookmarked"
+                    },
+                    {
+                      "children": null,
+                      "options": null,
+                      "type": "constant.integer",
+                      "value": "1"
+                    }
+                  ],
+                  "options": null,
+                  "type": "operator",
+                  "value": ">="
+                },
+                "ast_rtv2": {
+                  "children": [
+                    {
+                      "children": null,
+                      "id": 1,
+                      "node_path": "_0",
+                      "options": {
+                        "max_count_hint": 1
+                      },
+                      "type": "aggregation.count",
+                      "value": "Article Bookmarked"
+                    },
+                    {
+                      "children": null,
+                      "id": 2,
+                      "node_path": "_1",
+                      "options": null,
+                      "type": "constant.integer",
+                      "value": "1"
+                    }
+                  ],
+                  "id": 3,
+                  "node_path": "",
+                  "options": null,
+                  "type": "operator",
+                  "value": ">="
+                },
+                "collection": "users"
+              },
+              "__typename": "PersonasComputationDefinition"
+            },
+            "destination": {
+              "id": "ii_2lJfCRQULhoh0SCKZuldzBK0Zaa",
+              "destinationId": "6483d1ecb01e50e27535fdf1",
+              "enabled": true,
+              "settings": {
+                "audience_entered_event": "Audience Entered",
+                "audience_exited_event": "Audience Exited",
+                "id_sync": {
+                  "ids": {
+                    "phone": {
+                      "strategy": "first"
+                    }
+                  },
+                  "trigger_on": [
+                    "audience_joined",
+                    "audience_exited",
+                    "new_external_id_added"
+                  ]
+                },
+                "send_identify": true,
+                "send_track": false
+              },
+              "type": "DESTINATION",
+              "name": "Amplitude (Actions)",
+              "profileSyncConfig": {
+                "id": "spa_hdY1Z7cLf5eH6XrbAraL2m_6483d1ecb01e50e27535fdf1_aud_2F5eygdDixqzxrWn8dJBCdpeSfV",
+                "enabled": true,
+                "traitMapping": {
+                  "version": "1",
+                  "mapping": {
+                    "age": "age",
+                    "favorite_airport": "favorite_airport"
+                  },
+                  "__typename": "TraitMapping"
+                },
+                "__typename": "ProfileSyncConfig"
+              },
+              "metadata": {
+                "id": "5f7dd6d21ad74f3842b1fc47",
+                "slug": "actions-amplitude",
+                "name": "Amplitude (Actions)",
+                "description": "Amplitude is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion.",
+                "logos": {
+                  "default": "https://cdn.filepicker.io/api/file/8UzztuUuSF6SRsmBpeKD",
+                  "mark": "https://cdn.filepicker.io/api/file/KXuj6fcQA68tuErTvke5",
+                  "__typename": "MetadataLogos"
+                },
+                "options": {
+                  "apiKey": {
+                    "type": "string",
+                    "default": "",
+                    "private": true,
+                    "encrypt": false,
+                    "hidden": false,
+                    "scope": "event_destination",
+                    "readOnly": false,
+                    "dependsOn": null,
+                    "label": "API Key",
+                    "description": "Amplitude project API key. You can find this key in the \"General\" tab of your Amplitude project.",
+                    "validators": [
+                      [
+                        "required",
+                        "The apiKey property is required."
+                      ]
+                    ],
+                    "tags": [
+                      "authentication:test"
+                    ]
+                  },
+                  "endpoint": {
+                    "type": "select",
+                    "default": "north_america",
+                    "private": true,
+                    "encrypt": false,
+                    "hidden": false,
+                    "scope": "event_destination",
+                    "readOnly": false,
+                    "dependsOn": null,
+                    "options": [
+                      {
+                        "value": "north_america",
+                        "label": "North America",
+                        "text": "North America"
+                      },
+                      {
+                        "value": "europe",
+                        "label": "Europe",
+                        "text": "Europe"
+                      }
+                    ],
+                    "label": "Endpoint Region",
+                    "description": "The region to send your data.",
+                    "validators": [],
+                    "tags": [
+                      "authentication:test"
+                    ]
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "default": "",
+                    "private": true,
+                    "encrypt": false,
+                    "hidden": false,
+                    "scope": "event_destination",
+                    "readOnly": false,
+                    "dependsOn": null,
+                    "label": "Secret Key",
+                    "description": "Amplitude project secret key. You can find this key in the \"General\" tab of your Amplitude project.",
+                    "validators": [
+                      [
+                        "required",
+                        "The secretKey property is required."
+                      ]
+                    ],
+                    "tags": [
+                      "authentication:test"
+                    ]
+                  }
+                },
+                "type": "ACTION_DESTINATION",
+                "methods": {
+                  "identify": true,
+                  "track": true,
+                  "group": true,
+                  "__typename": "MetadataMethods"
+                },
+                "features": {
+                  "audiencesPolicy": {
+                    "sendIdentify": true,
+                    "sendTrack": false,
+                    "__typename": "IntegrationAudiencesPolicy"
+                  },
+                  "__typename": "IntegrationFeatures"
+                },
+                "isEventTesterSupported": true,
+                "categories": [
+                  "Analytics"
+                ],
+                "presets": [
+                  {
+                    "name": "Browser Session Tracking",
+                    "actionId": "nhJa95SA9MXa3hi2Vm2acC",
+                    "trigger": "type = \"track\" or type = \"identify\" or type = \"group\" or type = \"page\" or type = \"alias\"",
+                    "fields": {},
+                    "__typename": "DestinationSubscriptionPreset"
+                  },
+                  {
+                    "name": "Page Calls",
+                    "actionId": "uhprCN3Pc9fjb89v4xDrfP",
+                    "trigger": "type = \"page\"",
+                    "fields": {
+                      "user_id": {
+                        "@path": "$.userId"
+                      },
+                      "device_id": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.id"
+                          },
+                          "then": {
+                            "@path": "$.context.device.id"
+                          },
+                          "else": {
+                            "@path": "$.anonymousId"
+                          }
+                        }
+                      },
+                      "event_type": {
+                        "@template": "Viewed {{name}}"
+                      },
+                      "session_id": {
+                        "@path": "$.integrations.Actions Amplitude.session_id"
+                      },
+                      "time": {
+                        "@path": "$.timestamp"
+                      },
+                      "event_properties": {
+                        "@path": "$.properties"
+                      },
+                      "user_properties": {
+                        "@path": "$.traits"
+                      },
+                      "app_version": {
+                        "@path": "$.context.app.version"
+                      },
+                      "platform": {
+                        "@path": "$.context.device.type"
+                      },
+                      "os_name": {
+                        "@path": "$.context.os.name"
+                      },
+                      "os_version": {
+                        "@path": "$.context.os.version"
+                      },
+                      "device_brand": {
+                        "@path": "$.context.device.brand"
+                      },
+                      "device_manufacturer": {
+                        "@path": "$.context.device.manufacturer"
+                      },
+                      "device_model": {
+                        "@path": "$.context.device.model"
+                      },
+                      "carrier": {
+                        "@path": "$.context.network.carrier"
+                      },
+                      "country": {
+                        "@path": "$.context.location.country"
+                      },
+                      "region": {
+                        "@path": "$.context.location.region"
+                      },
+                      "city": {
+                        "@path": "$.context.location.city"
+                      },
+                      "language": {
+                        "@path": "$.context.locale"
+                      },
+                      "price": {
+                        "@path": "$.properties.price"
+                      },
+                      "quantity": {
+                        "@path": "$.properties.quantity"
+                      },
+                      "revenue": {
+                        "@path": "$.properties.revenue"
+                      },
+                      "productId": {
+                        "@path": "$.properties.productId"
+                      },
+                      "revenueType": {
+                        "@path": "$.properties.revenueType"
+                      },
+                      "location_lat": {
+                        "@path": "$.context.location.latitude"
+                      },
+                      "location_lng": {
+                        "@path": "$.context.location.longitude"
+                      },
+                      "ip": {
+                        "@path": "$.context.ip"
+                      },
+                      "idfa": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "idfv": {
+                        "@path": "$.context.device.id"
+                      },
+                      "adid": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "library": {
+                        "@path": "$.context.library.name"
+                      },
+                      "products": {
+                        "@arrayPath": [
+                          "$.properties.products",
+                          {
+                            "price": {
+                              "@path": "price"
+                            },
+                            "revenue": {
+                              "@path": "revenue"
+                            },
+                            "quantity": {
+                              "@path": "quantity"
+                            },
+                            "productId": {
+                              "@path": "productId"
+                            },
+                            "revenueType": {
+                              "@path": "revenueType"
+                            }
+                          }
+                        ]
+                      },
+                      "setOnce": {
+                        "initial_referrer": {
+                          "@path": "$.context.page.referrer"
+                        },
+                        "initial_utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "initial_utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "initial_utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "initial_utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "initial_utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "setAlways": {
+                        "referrer": {
+                          "@path": "$.context.page.referrer"
+                        },
+                        "utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "use_batch_endpoint": false,
+                      "userAgent": {
+                        "@path": "$.context.userAgent"
+                      },
+                      "userAgentParsing": true,
+                      "userAgentData": {
+                        "model": {
+                          "@path": "$.context.userAgentData.model"
+                        },
+                        "platformVersion": {
+                          "@path": "$.context.userAgentData.platformVersion"
+                        }
+                      }
+                    },
+                    "__typename": "DestinationSubscriptionPreset"
+                  },
+                  {
+                    "name": "Track Calls",
+                    "actionId": "uhprCN3Pc9fjb89v4xDrfP",
+                    "trigger": "type = \"track\" and event != \"Order Completed\"",
+                    "fields": {
+                      "user_id": {
+                        "@path": "$.userId"
+                      },
+                      "device_id": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.id"
+                          },
+                          "then": {
+                            "@path": "$.context.device.id"
+                          },
+                          "else": {
+                            "@path": "$.anonymousId"
+                          }
+                        }
+                      },
+                      "event_type": {
+                        "@path": "$.event"
+                      },
+                      "session_id": {
+                        "@path": "$.integrations.Actions Amplitude.session_id"
+                      },
+                      "time": {
+                        "@path": "$.timestamp"
+                      },
+                      "event_properties": {
+                        "@path": "$.properties"
+                      },
+                      "user_properties": {
+                        "@path": "$.traits"
+                      },
+                      "app_version": {
+                        "@path": "$.context.app.version"
+                      },
+                      "platform": {
+                        "@path": "$.context.device.type"
+                      },
+                      "os_name": {
+                        "@path": "$.context.os.name"
+                      },
+                      "os_version": {
+                        "@path": "$.context.os.version"
+                      },
+                      "device_brand": {
+                        "@path": "$.context.device.brand"
+                      },
+                      "device_manufacturer": {
+                        "@path": "$.context.device.manufacturer"
+                      },
+                      "device_model": {
+                        "@path": "$.context.device.model"
+                      },
+                      "carrier": {
+                        "@path": "$.context.network.carrier"
+                      },
+                      "country": {
+                        "@path": "$.context.location.country"
+                      },
+                      "region": {
+                        "@path": "$.context.location.region"
+                      },
+                      "city": {
+                        "@path": "$.context.location.city"
+                      },
+                      "language": {
+                        "@path": "$.context.locale"
+                      },
+                      "price": {
+                        "@path": "$.properties.price"
+                      },
+                      "quantity": {
+                        "@path": "$.properties.quantity"
+                      },
+                      "revenue": {
+                        "@path": "$.properties.revenue"
+                      },
+                      "productId": {
+                        "@path": "$.properties.productId"
+                      },
+                      "revenueType": {
+                        "@path": "$.properties.revenueType"
+                      },
+                      "location_lat": {
+                        "@path": "$.context.location.latitude"
+                      },
+                      "location_lng": {
+                        "@path": "$.context.location.longitude"
+                      },
+                      "ip": {
+                        "@path": "$.context.ip"
+                      },
+                      "idfa": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "idfv": {
+                        "@path": "$.context.device.id"
+                      },
+                      "adid": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "library": {
+                        "@path": "$.context.library.name"
+                      },
+                      "products": {
+                        "@arrayPath": [
+                          "$.properties.products",
+                          {
+                            "price": {
+                              "@path": "price"
+                            },
+                            "revenue": {
+                              "@path": "revenue"
+                            },
+                            "quantity": {
+                              "@path": "quantity"
+                            },
+                            "productId": {
+                              "@path": "productId"
+                            },
+                            "revenueType": {
+                              "@path": "revenueType"
+                            }
+                          }
+                        ]
+                      },
+                      "setOnce": {
+                        "initial_referrer": {
+                          "@path": "$.context.page.referrer"
+                        },
+                        "initial_utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "initial_utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "initial_utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "initial_utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "initial_utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "setAlways": {
+                        "referrer": {
+                          "@path": "$.context.page.referrer"
+                        },
+                        "utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "use_batch_endpoint": false,
+                      "userAgent": {
+                        "@path": "$.context.userAgent"
+                      },
+                      "userAgentParsing": true,
+                      "userAgentData": {
+                        "model": {
+                          "@path": "$.context.userAgentData.model"
+                        },
+                        "platformVersion": {
+                          "@path": "$.context.userAgentData.platformVersion"
+                        }
+                      }
+                    },
+                    "__typename": "DestinationSubscriptionPreset"
+                  },
+                  {
+                    "name": "Order Completed Calls",
+                    "actionId": "cRSyn3B292uKfxrpKwHRDY",
+                    "trigger": "type = \"track\" and event = \"Order Completed\"",
+                    "fields": {
+                      "trackRevenuePerProduct": false,
+                      "user_id": {
+                        "@path": "$.userId"
+                      },
+                      "device_id": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.id"
+                          },
+                          "then": {
+                            "@path": "$.context.device.id"
+                          },
+                          "else": {
+                            "@path": "$.anonymousId"
+                          }
+                        }
+                      },
+                      "event_type": {
+                        "@path": "$.event"
+                      },
+                      "session_id": {
+                        "@path": "$.integrations.Actions Amplitude.session_id"
+                      },
+                      "time": {
+                        "@path": "$.timestamp"
+                      },
+                      "event_properties": {
+                        "@path": "$.properties"
+                      },
+                      "user_properties": {
+                        "@path": "$.traits"
+                      },
+                      "app_version": {
+                        "@path": "$.context.app.version"
+                      },
+                      "platform": {
+                        "@path": "$.context.device.type"
+                      },
+                      "os_name": {
+                        "@path": "$.context.os.name"
+                      },
+                      "os_version": {
+                        "@path": "$.context.os.version"
+                      },
+                      "device_brand": {
+                        "@path": "$.context.device.brand"
+                      },
+                      "device_manufacturer": {
+                        "@path": "$.context.device.manufacturer"
+                      },
+                      "device_model": {
+                        "@path": "$.context.device.model"
+                      },
+                      "carrier": {
+                        "@path": "$.context.network.carrier"
+                      },
+                      "country": {
+                        "@path": "$.context.location.country"
+                      },
+                      "region": {
+                        "@path": "$.context.location.region"
+                      },
+                      "city": {
+                        "@path": "$.context.location.city"
+                      },
+                      "language": {
+                        "@path": "$.context.locale"
+                      },
+                      "price": {
+                        "@path": "$.properties.price"
+                      },
+                      "quantity": {
+                        "@path": "$.properties.quantity"
+                      },
+                      "revenue": {
+                        "@path": "$.properties.revenue"
+                      },
+                      "productId": {
+                        "@path": "$.properties.productId"
+                      },
+                      "revenueType": {
+                        "@path": "$.properties.revenueType"
+                      },
+                      "location_lat": {
+                        "@path": "$.context.location.latitude"
+                      },
+                      "location_lng": {
+                        "@path": "$.context.location.longitude"
+                      },
+                      "ip": {
+                        "@path": "$.context.ip"
+                      },
+                      "idfa": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "idfv": {
+                        "@path": "$.context.device.id"
+                      },
+                      "adid": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "library": {
+                        "@path": "$.context.library.name"
+                      },
+                      "products": {
+                        "@arrayPath": [
+                          "$.properties.products",
+                          {
+                            "price": {
+                              "@path": "price"
+                            },
+                            "revenue": {
+                              "@path": "revenue"
+                            },
+                            "quantity": {
+                              "@path": "quantity"
+                            },
+                            "productId": {
+                              "@path": "productId"
+                            },
+                            "revenueType": {
+                              "@path": "revenueType"
+                            }
+                          }
+                        ]
+                      },
+                      "use_batch_endpoint": false,
+                      "userAgent": {
+                        "@path": "$.context.userAgent"
+                      },
+                      "userAgentParsing": true,
+                      "utm_properties": {
+                        "utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "referrer": {
+                        "@path": "$.context.page.referrer"
+                      },
+                      "userAgentData": {
+                        "model": {
+                          "@path": "$.context.userAgentData.model"
+                        },
+                        "platformVersion": {
+                          "@path": "$.context.userAgentData.platformVersion"
+                        }
+                      }
+                    },
+                    "__typename": "DestinationSubscriptionPreset"
+                  },
+                  {
+                    "name": "Screen Calls",
+                    "actionId": "uhprCN3Pc9fjb89v4xDrfP",
+                    "trigger": "type = \"screen\"",
+                    "fields": {
+                      "user_id": {
+                        "@path": "$.userId"
+                      },
+                      "device_id": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.id"
+                          },
+                          "then": {
+                            "@path": "$.context.device.id"
+                          },
+                          "else": {
+                            "@path": "$.anonymousId"
+                          }
+                        }
+                      },
+                      "event_type": {
+                        "@template": "Viewed {{name}}"
+                      },
+                      "session_id": {
+                        "@path": "$.integrations.Actions Amplitude.session_id"
+                      },
+                      "time": {
+                        "@path": "$.timestamp"
+                      },
+                      "event_properties": {
+                        "@path": "$.properties"
+                      },
+                      "user_properties": {
+                        "@path": "$.traits"
+                      },
+                      "app_version": {
+                        "@path": "$.context.app.version"
+                      },
+                      "platform": {
+                        "@path": "$.context.device.type"
+                      },
+                      "os_name": {
+                        "@path": "$.context.os.name"
+                      },
+                      "os_version": {
+                        "@path": "$.context.os.version"
+                      },
+                      "device_brand": {
+                        "@path": "$.context.device.brand"
+                      },
+                      "device_manufacturer": {
+                        "@path": "$.context.device.manufacturer"
+                      },
+                      "device_model": {
+                        "@path": "$.context.device.model"
+                      },
+                      "carrier": {
+                        "@path": "$.context.network.carrier"
+                      },
+                      "country": {
+                        "@path": "$.context.location.country"
+                      },
+                      "region": {
+                        "@path": "$.context.location.region"
+                      },
+                      "city": {
+                        "@path": "$.context.location.city"
+                      },
+                      "language": {
+                        "@path": "$.context.locale"
+                      },
+                      "price": {
+                        "@path": "$.properties.price"
+                      },
+                      "quantity": {
+                        "@path": "$.properties.quantity"
+                      },
+                      "revenue": {
+                        "@path": "$.properties.revenue"
+                      },
+                      "productId": {
+                        "@path": "$.properties.productId"
+                      },
+                      "revenueType": {
+                        "@path": "$.properties.revenueType"
+                      },
+                      "location_lat": {
+                        "@path": "$.context.location.latitude"
+                      },
+                      "location_lng": {
+                        "@path": "$.context.location.longitude"
+                      },
+                      "ip": {
+                        "@path": "$.context.ip"
+                      },
+                      "idfa": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "idfv": {
+                        "@path": "$.context.device.id"
+                      },
+                      "adid": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "then": {
+                            "@path": "$.context.device.advertisingId"
+                          },
+                          "else": {
+                            "@path": "$.context.device.idfa"
+                          }
+                        }
+                      },
+                      "library": {
+                        "@path": "$.context.library.name"
+                      },
+                      "products": {
+                        "@arrayPath": [
+                          "$.properties.products",
+                          {
+                            "price": {
+                              "@path": "price"
+                            },
+                            "revenue": {
+                              "@path": "revenue"
+                            },
+                            "quantity": {
+                              "@path": "quantity"
+                            },
+                            "productId": {
+                              "@path": "productId"
+                            },
+                            "revenueType": {
+                              "@path": "revenueType"
+                            }
+                          }
+                        ]
+                      },
+                      "setOnce": {
+                        "initial_referrer": {
+                          "@path": "$.context.page.referrer"
+                        },
+                        "initial_utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "initial_utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "initial_utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "initial_utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "initial_utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "setAlways": {
+                        "referrer": {
+                          "@path": "$.context.page.referrer"
+                        },
+                        "utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "use_batch_endpoint": false,
+                      "userAgent": {
+                        "@path": "$.context.userAgent"
+                      },
+                      "userAgentParsing": true,
+                      "userAgentData": {
+                        "model": {
+                          "@path": "$.context.userAgentData.model"
+                        },
+                        "platformVersion": {
+                          "@path": "$.context.userAgentData.platformVersion"
+                        }
+                      }
+                    },
+                    "__typename": "DestinationSubscriptionPreset"
+                  },
+                  {
+                    "name": "Identify Calls",
+                    "actionId": "9STyJcVfDee2NowS4DGdmW",
+                    "trigger": "type = \"identify\"",
+                    "fields": {
+                      "user_id": {
+                        "@path": "$.userId"
+                      },
+                      "device_id": {
+                        "@if": {
+                          "exists": {
+                            "@path": "$.context.device.id"
+                          },
+                          "then": {
+                            "@path": "$.context.device.id"
+                          },
+                          "else": {
+                            "@path": "$.anonymousId"
+                          }
+                        }
+                      },
+                      "user_properties": {
+                        "@path": "$.traits"
+                      },
+                      "app_version": {
+                        "@path": "$.context.app.version"
+                      },
+                      "platform": {
+                        "@path": "$.context.device.type"
+                      },
+                      "os_name": {
+                        "@path": "$.context.os.name"
+                      },
+                      "os_version": {
+                        "@path": "$.context.os.version"
+                      },
+                      "device_brand": {
+                        "@path": "$.context.device.brand"
+                      },
+                      "device_manufacturer": {
+                        "@path": "$.context.device.manufacturer"
+                      },
+                      "device_model": {
+                        "@path": "$.context.device.model"
+                      },
+                      "carrier": {
+                        "@path": "$.context.network.carrier"
+                      },
+                      "country": {
+                        "@path": "$.context.location.country"
+                      },
+                      "region": {
+                        "@path": "$.context.location.region"
+                      },
+                      "city": {
+                        "@path": "$.context.location.city"
+                      },
+                      "language": {
+                        "@path": "$.context.locale"
+                      },
+                      "userAgent": {
+                        "@path": "$.context.userAgent"
+                      },
+                      "userAgentParsing": true,
+                      "utm_properties": {
+                        "utm_source": {
+                          "@path": "$.context.campaign.source"
+                        },
+                        "utm_medium": {
+                          "@path": "$.context.campaign.medium"
+                        },
+                        "utm_campaign": {
+                          "@path": "$.context.campaign.name"
+                        },
+                        "utm_term": {
+                          "@path": "$.context.campaign.term"
+                        },
+                        "utm_content": {
+                          "@path": "$.context.campaign.content"
+                        }
+                      },
+                      "referrer": {
+                        "@path": "$.context.page.referrer"
+                      },
+                      "library": {
+                        "@path": "$.context.library.name"
+                      },
+                      "userAgentData": {
+                        "model": {
+                          "@path": "$.context.userAgentData.model"
+                        },
+                        "platformVersion": {
+                          "@path": "$.context.userAgentData.platformVersion"
+                        }
+                      }
+                    },
+                    "__typename": "DestinationSubscriptionPreset"
+                  }
+                ],
+                "__typename": "IntegrationMetadata"
+              },
+              "syncs": {
+                "data": [],
+                "__typename": "AudienceDestinationSyncs"
+              },
+              "__typename": "AudienceDestination"
+            },
+            "__typename": "RealtimeAudience"
+          },
+          "personasSource": {
+            "id": "mambzB43271Gi7Zv1STXke",
+            "slug": "personas_wilkin-first",
+            "integrations": [
+              {
+                "id": "62e42a09e147fd23f51dc3db",
+                "enabled": true,
+                "metadataId": "54521fd925e721e32a72eed6",
+                "settings": {
+                  "apiKey": "••••••••••90f7",
+                  "consolidatedPageCalls": false,
+                  "crossSubdomainCookie": true,
+                  "enableEuropeanUnionEndpoint": false,
+                  "eventIncrements": [],
+                  "groupIdentifierTraits": [],
+                  "groupTraitsToSetOnce": [],
+                  "keepOldAlias": false,
+                  "legacySuperProperties": false,
+                  "people": true,
+                  "peopleProperties": [],
+                  "persistence": "cookie",
+                  "propIncrements": [],
+                  "secureCookie": false,
+                  "setAllTraitsByDefault": true,
+                  "sourceName": "",
+                  "superProperties": [],
+                  "token": "5ea4edf28b35bb1bb772a18558411652",
+                  "trackAllPages": false,
+                  "trackCategorizedPages": false,
+                  "trackNamedPages": false,
+                  "useAdvertisingIdForDistinctId": false
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6372e4b66d9c2115ac900837",
+                "enabled": true,
+                "metadataId": "54521fdc25e721e32a72ef04",
+                "settings": {
+                  "globalHook": "",
+                  "hooks": [],
+                  "sharedSecret": ""
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6442ca5069d709352169ed07",
+                "enabled": true,
+                "metadataId": "58915ccf80412f644ff6295b",
+                "settings": {
+                  "apiKey": "",
+                  "directChannels": [
+                    "mobile",
+                    "server",
+                    "client"
+                  ],
+                  "endpoint": "https://cw3f9h5pb0.execute-api.us-east-1.amazonaws.com/production/v1/call"
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "64495097a8828e8dca7a3cf6",
+                "enabled": true,
+                "metadataId": "62ded0cf5753c743883ca0f3",
+                "settings": {
+                  "oauth": {
+                    "access-token": "••••••••••OjA=",
+                    "access_token": "••••••••••OjA=",
+                    "token_type": "Bearer",
+                    "createdBy": "billawilkin@gmail.com",
+                    "createdAt": "2023-05-02T00:31:21.340Z",
+                    "displayName": "Segment Friends"
+                  }
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6483d1ecb01e50e27535fdf1",
+                "enabled": true,
+                "metadataId": "5f7dd6d21ad74f3842b1fc47",
+                "settings": {
+                  "apiKey": "••••••••••bf91",
+                  "endpoint": "north_america",
+                  "secretKey": "••••••••••2a5f"
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "654d180e1ee8da800e5482eb",
+                "enabled": false,
+                "metadataId": "5a4d24dcc5836400017188f6",
+                "settings": {
+                  "access_token": "",
+                  "account": "",
+                  "oauth": {},
+                  "specialAdCategory": ""
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6565251b99ab40222382933b",
+                "enabled": false,
+                "metadataId": "5a6b50f1c900fa00011858fd",
+                "settings": {
+                  "account": "",
+                  "appId": "",
+                  "oauth": {}
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6565257e15cc30d4f72dd49a",
+                "enabled": false,
+                "metadataId": "60ae8b97dcb6cc52d5d0d5ab",
+                "settings": {
+                  "conversionTrackingId": "",
+                  "customerId": "",
+                  "oauth": {}
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "656a53f17e8827b1e91925de",
+                "enabled": true,
+                "metadataId": "5f7dd78fe27ce7ff2b8bfa37",
+                "settings": {
+                  "accountRegion": "US 🇺🇸",
+                  "apiKey": "••••••••••433a",
+                  "siteId": "••••••••••4d2a"
+                },
+                "source": {
+                  "id": "mambzB43271Gi7Zv1STXke",
+                  "slug": "personas_wilkin-first",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "65fa2974a03dd781a01578bc",
+                "enabled": true,
+                "metadataId": "60ad61f9ff47a16b8fb7b5d9",
+                "settings": {
+                  "apiSecret": "••••••••••501A",
+                  "firebaseAppId": "",
+                  "measurementId": "G-EJ1P9MFJF6"
+                },
+                "source": {
+                  "id": "5putVZpjUaXhzgZiET1jyL",
+                  "slug": "personas_wilkin_first2",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6610668c679421b765b184bd",
+                "enabled": true,
+                "metadataId": "614a3c7d791c91c41bae7599",
+                "settings": {
+                  "sharedSecret": ""
+                },
+                "source": {
+                  "id": "5putVZpjUaXhzgZiET1jyL",
+                  "slug": "personas_wilkin_first2",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6616bf5364236fe2ef486c06",
+                "enabled": false,
+                "metadataId": "615c7438d93d9b61b1e9e192",
+                "settings": {
+                  "apiRegion": "US 🇺🇸",
+                  "apiSecret": "••••••••••",
+                  "projectToken": "s",
+                  "sourceName": "",
+                  "strictMode": "1"
+                },
+                "source": {
+                  "id": "5putVZpjUaXhzgZiET1jyL",
+                  "slug": "personas_wilkin_first2",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "66478cbd78356ffed6d5fe35",
+                "enabled": false,
+                "metadataId": "5f7dd6d21ad74f3842b1fc47",
+                "settings": {
+                  "apiKey": "••••••••••bf91",
+                  "endpoint": "north_america",
+                  "secretKey": "••••••••••2a5f"
+                },
+                "source": {
+                  "id": "5putVZpjUaXhzgZiET1jyL",
+                  "slug": "personas_wilkin_first2",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "6660ffdc9cace851e85ab540",
+                "enabled": true,
+                "metadataId": "6116a41e2e8fc680d8daf821",
+                "settings": {
+                  "connectionOverrides": "rp=all&rc=5",
+                  "profileApiAccessToken": "••••••••••bT0=",
+                  "profileApiEnvironment": "production",
+                  "region": "us-west-2",
+                  "sourceId": "5putVZpjUaXhzgZiET1jyL",
+                  "spaceId": "spa_hdY1Z7cLf5eH6XrbAraL2m",
+                  "twilioAccountSID": "AC693e00e31851b0c0203baae3a86f1765",
+                  "twilioApiKeySID": "SKf2a61b377347ec7eda6ae2d9a4f7b60d",
+                  "twilioApiKeySecret": "••••••••••QaYt",
+                  "twilioHostname": "api.twilio.com",
+                  "webhookUrl": "https://engage-ma-webhook-api.engage.segment.com/twilio"
+                },
+                "source": {
+                  "id": "5putVZpjUaXhzgZiET1jyL",
+                  "slug": "personas_wilkin_first2",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              },
+              {
+                "id": "66aa85dd5f0394959089d199",
+                "enabled": false,
+                "metadataId": "64b6a221baf168a989be641a",
+                "settings": {
+                  "client_id": "",
+                  "client_secret": "",
+                  "oauth": {}
+                },
+                "source": {
+                  "id": "5putVZpjUaXhzgZiET1jyL",
+                  "slug": "personas_wilkin_first2",
+                  "__typename": "Source"
+                },
+                "__typename": "Integration"
+              }
+            ],
+            "__typename": "PersonasSource"
+          },
+          "__typename": "Space"
+        },
+        "__typename": "Workspace"
+      }
+    }
+  }
