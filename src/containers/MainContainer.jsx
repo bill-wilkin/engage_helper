@@ -14,7 +14,7 @@ const MainContainer = () => {
         } else {
             setTraits(state.currentTraits);            
         }
-    },[state.currentTraits, state.updatedTraits]);
+    },[state]);
     
 
 
