@@ -14,17 +14,23 @@ const Overview = ({traits, space, audience}) => {
 
     return (
         <div id='right-overview'>
-            <ButtonBox 
-                handleButtonClick={handleButtonClick}
-            />
+
             {!traits ? 
             
                 <InfoBox /> :
-                <SamplePayload 
-                selectedPayloadType={selectedPayloadType} traits={traits} 
-                audience={audience}
-                space={space}
-                /> 
+                (
+                <>
+                    <ButtonBox 
+                        handleButtonClick={handleButtonClick}
+                        />
+                    <SamplePayload 
+                        selectedPayloadType={selectedPayloadType} traits={traits} 
+                        audience={audience}
+                        space={space}
+                    /> 
+                    
+                </>
+              )
             }
     
         </div>
