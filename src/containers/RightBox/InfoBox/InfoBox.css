@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: row;
     margin-top: 3rem;
-    background-color: #3f8266;
-    width: 60vw;
-    height: 15vh;
+    background-color: #028676;
+    /* width: 60vw;
+    height: 15vh; */
     border-radius: 0.5rem;
 }
 
@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     width: 55vw;
-    background-color: #3f8266;
+    /* background-color: #3f8266; */
     border-radius: 0.5rem;
 }
 

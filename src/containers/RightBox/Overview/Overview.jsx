@@ -7,6 +7,7 @@ import './Overview.css';
 const Overview = ({traits, space, audience}) => {
     const [selectedPayloadType, setSelectedPayloadType] = useState('track');
 
+
     const handleButtonClick = (input) => {
         setSelectedPayloadType(input);
     }
@@ -16,12 +17,16 @@ const Overview = ({traits, space, audience}) => {
             <ButtonBox 
                 handleButtonClick={handleButtonClick}
             />
-            <SamplePayload 
+            {!traits ? 
+            
+                <InfoBox /> :
+                <SamplePayload 
                 selectedPayloadType={selectedPayloadType} traits={traits} 
                 audience={audience}
                 space={space}
-            />
-            <InfoBox />
+                /> 
+            }
+    
         </div>
     )
 }
