@@ -19,13 +19,13 @@ const Overview = ({traits, space, audience}) => {
             />
             {!traits ? 
             
-                <InfoBox /> :
+                <InfoBox /> : 
                 <SamplePayload 
                 selectedPayloadType={selectedPayloadType} traits={traits} 
                 audience={audience}
                 space={space}
                 /> 
-            }
+             } 
     
         </div>
     )
