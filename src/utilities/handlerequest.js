@@ -5,6 +5,7 @@ import {
     setCurrentSpaceAction, 
     setCurrentAudienceAction,
     setCurrentTraitsAction,
+    setUpdatedTraitsAction
 } from '../state-management/actions';
 
 export const handleRequest = async (requestURL, requestBody, getState, dispatch) => {
@@ -26,6 +27,7 @@ export const handleRequest = async (requestURL, requestBody, getState, dispatch)
         space: () => !state.currentSpace ? setCurrentSpaceAction(handled.space) : null,
         audience: () => !state.currentAudience ? setCurrentAudienceAction(handled.audience) : null,
         traits: () => setCurrentTraitsAction(handled.traits),
+        updatedTraits: () => setUpdatedTraitsAction(handled.updatedTraits),
     };
 
     const actions = Object.entries(actionMap)

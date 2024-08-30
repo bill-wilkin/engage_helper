@@ -23,5 +23,12 @@ export const operations = {
             traits
         }
     },
+    updateAudienceDestination: (data) => {
+        const updatedTraits = data.data.updateAudienceDestination.profileSyncConfig.traitMapping.mapping;
+
+        return {
+            updatedTraits
+        }
+    }
 
 }
