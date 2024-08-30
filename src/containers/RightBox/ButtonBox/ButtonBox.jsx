@@ -20,6 +20,8 @@ const ButtonBox = ({handleButtonClick}) => {
     const handleRefreshButtonClick = (e) => {
         e.preventDefault();
         alert('Refresh Clicked');
+        chrome.tabs.reload();
+
     }
 
     return (
@@ -28,7 +30,7 @@ const ButtonBox = ({handleButtonClick}) => {
                 <button className='button' onClick={handleTrackButtonClick}>Track</button>
                 <button className='button'onClick={handleIdentifyButtonClick}> Identify</button>
                 <button className='button' onClick={handleGroupButtonClick}>Group</button>
-                <button id='refresh-button' className='button' onClick={handleRefreshButtonClick}>Refresh</button>
+                <button id='refresh-button' className='button' onClick={handleRefreshButtonClick}>Refresh Webpage</button>
             </div>
         </>
     )
