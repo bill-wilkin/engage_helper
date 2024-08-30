@@ -18,9 +18,11 @@ export const operations = {
     },
     audienceDestinationSettings: (data) => {
         const traits = data.data.workspace.space.audience.destination.profileSyncConfig.traitMapping.mapping;
+        const ids = data.data.workspace.space.audience.destination.settings.id_sync.ids;
         
         return {
-            traits
+            traits,
+            ids
         }
     },
     updateAudienceDestination: (data) => {
