@@ -2,15 +2,19 @@
     background-color: #c7c6c3;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .copy-button{
     background-color: #c7c6c3;
+    color: black;
     width: 5vw;
     height: 5vh;
     padding: 0;
     margin: 0;
     align-self: flex-end;
+    position: absolute;
+    bottom: 0;
 }
 
 .payload-text{
@@ -18,20 +22,20 @@
 }
 
 pre code {
-    background: #c7c6c3;
+    /* background: #c7c6c3; */
     color: #666;
     page-break-inside: avoid;
     font-family: monospace;
     font-size: 15px;
     line-height: 1.6;
-    margin-bottom: 1.6em;
+    /* margin-bottom: 1.6em; */
     white-space: break-spaces;
-    overflow: auto;
+    overflow: scroll;
     padding: 1em 1.5em;
     display: block;
     word-wrap: break-word;
-    width: 50vw;
-    height: 40vh;
+    width: 40vw;
+    height: 70vh;
     text-align: left;
   }
 

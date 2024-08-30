@@ -6,6 +6,7 @@
     /* width: 60vw;
     height: 15vh; */
     border-radius: 0.5rem;
+    text-align: left;
 }
 
 .information-container{
@@ -19,7 +20,7 @@
 .information-not-configured, .information{
     margin: 0;
     font-size: 0.8rem;
-    text-align: left;
+    /* text-align: left; */
 }
 
 .information-not-configured{
