@@ -11,8 +11,10 @@ const MainContainer = () => {
     const [audience, setAudience] = useState(null);
     
     useEffect(() => {
-        if (state.currentTraits) {
-            setTraits(state.currentTraits);
+        if (state.updatedTraits) {
+            setTraits(state.updatedTraits);
+        } else {
+            setTraits(state.currentTraits);            
         }
         if (state.currentSpace) {
             setSpace(state.currentSpace);

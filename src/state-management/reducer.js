@@ -17,7 +17,7 @@ export const reducer = (state, action) => {
             return { ...state, currentTraits: action.payload };
         // updated traits object from updateAudienceDestination.data.updateAudienceDestination.profileSyncConfig.traitMapping.mapping
         case 'SET_UPDATED_TRAITS':
-            return { ...state, updatedTraits: action.payload };    
+            return { ...state, updatedTraits: action.payload };       
         default:
             return state;
     }
