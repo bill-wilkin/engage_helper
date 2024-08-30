@@ -13,7 +13,7 @@ const Overview = ({traits}) => {
 
     return (
         <div id='right-overview'>
-            <ButtonBox handleButtonClick={handleButtonClick}/>
+            <ButtonBox handleButtonClick={handleButtonClick} />
             <SamplePayload selectedPayloadType={selectedPayloadType} traits={traits} />
             <InfoBox />
         </div>

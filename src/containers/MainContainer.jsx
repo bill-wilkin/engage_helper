@@ -9,10 +9,12 @@ const MainContainer = () => {
     const [traits, setTraits] = useState(null);  
     
     useEffect(() => {
-        if (state.currentTraits) {
-            setTraits(state.currentTraits);
+        if (state.updatedTraits) {
+            setTraits(state.updatedTraits);
+        } else {
+            setTraits(state.currentTraits);            
         }
-    }, [state.currentTraits]);
+    },[state.currentTraits, state.updatedTraits]);
     
 
 
