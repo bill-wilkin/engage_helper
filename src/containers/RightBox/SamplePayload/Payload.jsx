@@ -18,13 +18,23 @@ const basePayload = {
 
 
 
-const Payload = ({ traits, selectedPayloadType, additionalData = { properties: { firstName: "Bob", lastName: "Ross" } }}) => {
+const Payload = ({ traits, selectedPayloadType, space, audience, additionalData = { properties: { firstName: "Bob", lastName: "Ross" } }}) => {
 
       let payload = {
       ...basePayload,
       ...additionalData, // Allows overriding the type and adding properties/traits from additionalData
     };
-  
+
+    //add dynamic fields to payload from state
+    if (space) {
+      payload.context.personas.namespace = space.id;
+      payload.context.personas.space_id = space.id;
+    }
+
+    if (audience) {
+      payload.context.personas.computation_id = audience.id;
+      payload.context.personas.computation_key = audience.key;
+    }
 
       if (selectedPayloadType === "track") {
         payload = {
