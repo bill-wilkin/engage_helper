@@ -27,13 +27,12 @@ const MainContainer = () => {
 
     return (
         <div style={{display:"flex", justifyContent:"space-evenly"}}>
-            {/* <LeftOverview />
+            <LeftOverview />
             <Overview 
                 traits={traits} 
                 space={space} 
                 audience={audience}
-            /> */}
-            <p>{JSON.stringify(Object.keys(state))}</p>
+            />
         </div>
     )
 }
