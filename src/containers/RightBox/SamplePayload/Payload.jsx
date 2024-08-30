@@ -1,3 +1,5 @@
+import CopyPayload from "./CopyPayload";
+
 const basePayload = {
   type: "track", // Default type, can be overridden by additionalData.type
   context: {
@@ -66,8 +68,13 @@ const Payload = ({ traits, selectedPayloadType, space, audience, additionalData 
     };
   }
   return (
-    <pre>{JSON.stringify(payload, null, 2)}</pre>
-  );
+    <div className="payload-container">
+      <pre>{JSON.stringify(payload, null, 2)}</pre>
+      <CopyPayload textToCopy={JSON.stringify(payload)} />
+    </div>
+    
+  )
+  
 }
 
 export default Payload;

@@ -11,15 +11,14 @@ const ButtonBox = ({handleButtonClick}) => {
         e.preventDefault();
         handleButtonClick('identify');
     }
-
-    const handleGroupButtonClick = (e) => {
-        e.preventDefault();
-        handleButtonClick('group');
-    }
+// remove until we can determine expected funtionality of audience level traits
+    // const handleGroupButtonClick = (e) => {
+    //     e.preventDefault();
+    //     handleButtonClick('group');
+    // }
 
     const handleRefreshButtonClick = (e) => {
         e.preventDefault();
-        alert('Refresh Clicked');
         chrome.tabs.reload();
 
     }
@@ -27,10 +26,14 @@ const ButtonBox = ({handleButtonClick}) => {
     return (
         <>
             <div id='button-box'>
-                <button className='button' onClick={handleTrackButtonClick}>Track</button>
-                <button className='button'onClick={handleIdentifyButtonClick}> Identify</button>
-                <button className='button' onClick={handleGroupButtonClick}>Group</button>
-                <button id='refresh-button' className='button' onClick={handleRefreshButtonClick}>Refresh Webpage</button>
+                <div>
+                    <button className='button' onClick={handleTrackButtonClick}>Track</button>
+                    <button className='button'onClick={handleIdentifyButtonClick}> Identify</button>
+                    {/* <button className='button' onClick={handleGroupButtonClick}>Group</button> */}
+                </div>
+                <div>
+                    <button id='refresh-button' className='button' onClick={handleRefreshButtonClick}>Refresh Webpage</button>
+                </div>
             </div>
         </>
     )

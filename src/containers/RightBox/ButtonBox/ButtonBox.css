@@ -1,6 +1,7 @@
 #button-box {
     display: flex;
-    /* align-items: flex-start; */
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .button {
@@ -21,7 +22,4 @@
 
 #refresh-button {
     margin-left: 3rem;
-    /* change to flex end */
-    /* align-self: flex-end; */
-    /* margin-right: auto; */
 }

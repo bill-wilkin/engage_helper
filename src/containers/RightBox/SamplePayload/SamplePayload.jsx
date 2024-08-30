@@ -1,6 +1,7 @@
 import './SamplePayload.css'
 import IconCopy16 from './Icon'
 import Payload from './Payload'
+import CopyPayload from './CopyPayload'
 
 export const SamplePayload = ({selectedPayloadType, traits, space, audience}) => {
     return(
@@ -20,9 +21,6 @@ export const SamplePayload = ({selectedPayloadType, traits, space, audience}) =>
                     />
                     </code>
                 </pre> 
-                <button className='copy-button'>
-                    <IconCopy16 />
-                </button>
             </article>
         </>
     )
