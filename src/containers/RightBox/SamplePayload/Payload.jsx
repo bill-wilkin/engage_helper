@@ -7,63 +7,67 @@ const basePayload = {
       computation_key: "trait_activation_visualizer",
       namespace: "spa_pJSXHmVkcs75AC3gNEsKMk",
       space_id: "spa_pJSXHmVkcs75AC3gNEsKMk"
-    }
+    },
+    traits: {} // Initialize the traits object within context as empty
   },
   userId: "user123",
   properties: {
-    trait_activation_visualizer: true,
-    email: "test@example.com"
+    trait_activation_visualizer: true
   }
 };
 
-
-
 const Payload = ({ traits, selectedPayloadType, space, audience, additionalData = { properties: { firstName: "Bob", lastName: "Ross" } }}) => {
+  let payload = {
+    ...basePayload,
+    ...additionalData, // Allows overriding the type and adding properties/traits from additionalData
+  };
 
-      let payload = {
-      ...basePayload,
-      ...additionalData, // Allows overriding the type and adding properties/traits from additionalData
+  // Add dynamic fields to payload from state
+  if (space) {
+    payload.context.personas.namespace = space.id;
+    payload.context.personas.space_id = space.id;
+  }
+
+  if (audience) {
+    payload.context.personas.computation_id = audience.id;
+    payload.context.personas.computation_key = audience.key;
+  }
+
+ if (selectedPayloadType === "track") {
+  payload.properties[audience.key] = true;
+    payload = {
+      ...payload,
+      properties: {
+        ...payload.properties, // Use the updated payload properties
+        ...additionalData.properties, // Merge and override with properties from additionalData
+        ...traits // Add in specified traits from Trait Activation
+      }
     };
 
-    //add dynamic fields to payload from state
-    if (space) {
-      payload.context.personas.namespace = space.id;
-      payload.context.personas.space_id = space.id;
+    if (traits?.email) {
+      if (!payload.context.traits) {
+        payload.context.traits = {};
+      }
+      payload.context.traits.email = traits.email;
+      delete traits.email;
     }
 
-    if (audience) {
-      payload.context.personas.computation_id = audience.id;
-      payload.context.personas.computation_key = audience.key;
-    }
-
-      if (selectedPayloadType === "track") {
-        payload = {
-          ...payload,
-          properties: {
-            ...basePayload.properties, // Retain initial properties from basePayload
-            ...additionalData.properties, // Merge and override with properties from additionalData
-            ...traits //add in specified traits from Trait Activation
-          }
-        };
-
-
-
-    } else {
-      delete payload.properties;
-      payload = {
-        ...payload,
-        type: selectedPayloadType,
-        traits: {
-          ...basePayload.traits, // This line is theoretical, as basePayload doesn't initially have traits in your example
-          ...additionalData.traits, // Merge and override with traits from additionalData
-          ...traits //add in specified traits from Trait Activation
-        }
-      };
-    }
+  } else {
+    delete payload.properties;
+  
+    payload = {
+      ...payload,
+      type: selectedPayloadType,
+      traits: {
+        ...payload.traits, // Use the updated payload traits
+        ...additionalData.traits, // Merge and override with traits from additionalData
+        ...traits // Add in specified traits from Trait Activation
+      }
+    };
+  }
   return (
     <pre>{JSON.stringify(payload, null, 2)}</pre>
-  )
-  
+  );
 }
 
 export default Payload;
