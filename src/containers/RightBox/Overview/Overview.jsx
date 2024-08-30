@@ -1,10 +1,10 @@
 import ButtonBox from "../ButtonBox/ButtonBox"
 import { InfoBox } from "../InfoBox/InfoBox";
 import { SamplePayload } from "../SamplePayload/SamplePayload"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import './Overview.css';
 
-const Overview = ({traits}) => {
+const Overview = ({traits, space, audience}) => {
     const [selectedPayloadType, setSelectedPayloadType] = useState('track');
 
     const handleButtonClick = (input) => {
@@ -13,8 +13,14 @@ const Overview = ({traits}) => {
 
     return (
         <div id='right-overview'>
-            <ButtonBox handleButtonClick={handleButtonClick} />
-            <SamplePayload selectedPayloadType={selectedPayloadType} traits={traits} />
+            <ButtonBox 
+                handleButtonClick={handleButtonClick}
+            />
+            <SamplePayload 
+                selectedPayloadType={selectedPayloadType} traits={traits} 
+                audience={audience}
+                space={space}
+            />
             <InfoBox />
         </div>
     )

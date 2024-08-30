@@ -7,6 +7,8 @@ const MainContainer = () => {
 
     const { state, dispatch } = useCustomContext();
     const [traits, setTraits] = useState(null);  
+    const [space, setSpace] = useState(null);
+    const [audience, setAudience] = useState(null);
     
     useEffect(() => {
         if (state.updatedTraits) {
@@ -14,14 +16,23 @@ const MainContainer = () => {
         } else {
             setTraits(state.currentTraits);            
         }
-    },[state]);
+        if (state.currentSpace) {
+            setSpace(state.currentSpace);
+        }
+        if (state.currentAudience) {
+            setAudience(state.currentAudience);
+        }
+    }, [state]);
     
-
 
     return (
         <div style={{display:"flex", justifyContent:"space-evenly"}}>
             <LeftOverview />
-            <Overview traits={traits}/>
+            <Overview 
+                traits={traits} 
+                space={space} 
+                audience={audience}
+            />
         </div>
     )
 }
