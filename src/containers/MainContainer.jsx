@@ -9,6 +9,7 @@ const MainContainer = () => {
     const [traits, setTraits] = useState(null);  
     const [space, setSpace] = useState(null);
     const [audience, setAudience] = useState(null);
+    const [ids, setIds] = useState(null)
     
     useEffect(() => {
         if (state.updatedTraits) {
@@ -22,6 +23,9 @@ const MainContainer = () => {
         if (state.currentAudience) {
             setAudience(state.currentAudience);
         }
+        if (state.currentIds) {
+            setIds(state.currentIds);
+        }
     }, [state]);
     
 
@@ -32,6 +36,7 @@ const MainContainer = () => {
                 traits={traits} 
                 space={space} 
                 audience={audience}
+                ids={ids}
             />
         </div>
     )

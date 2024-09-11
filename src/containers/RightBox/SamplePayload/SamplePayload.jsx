@@ -3,7 +3,7 @@ import IconCopy16 from './Icon'
 import Payload from './Payload'
 import CopyPayload from './CopyPayload'
 
-export const SamplePayload = ({selectedPayloadType, traits, space, audience}) => {
+export const SamplePayload = ({selectedPayloadType, traits, space, audience, ids}) => {
     return(
         <>
             <div id='label-box'>
@@ -18,6 +18,7 @@ export const SamplePayload = ({selectedPayloadType, traits, space, audience}) =>
                         traits={traits}
                         space={space}
                         audience={audience}
+                        ids={ids}
                     />
                     </code>
                 </pre> 
