@@ -4,7 +4,7 @@ import { SamplePayload } from "../SamplePayload/SamplePayload"
 import { useState } from "react";
 import './Overview.css';
 
-const Overview = ({traits, space, audience}) => {
+const Overview = ({traits, space, audience, ids}) => {
     const [selectedPayloadType, setSelectedPayloadType] = useState('track');
 
 
@@ -24,6 +24,7 @@ const Overview = ({traits, space, audience}) => {
                 selectedPayloadType={selectedPayloadType} traits={traits} 
                 audience={audience}
                 space={space}
+                ids={ids}
                 /> 
              } 
     
