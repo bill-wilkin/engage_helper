@@ -19,7 +19,8 @@ const basePayload = {
   }
 };
 
-const Payload = ({ traits, selectedPayloadType, space, audience, ids}) => {
+const Payload = ({ idTraits, selectedPayloadType, space, audience, ids}) => {
+  console.log('TRAITS, ', idTraits)
   let payload = {
     ...basePayload,
     // ...additionalData, // Allows overriding the type and adding properties/traits from additionalData - REMOVED as this was added for initial stage testing
@@ -69,30 +70,31 @@ const Payload = ({ traits, selectedPayloadType, space, audience, ids}) => {
       properties: {
         ...payload.properties, // Use the updated payload properties
         // ...additionalData.properties, // Merge and override with properties from additionalData - REMOVED as this was added for initial stage testing
-        ...traits // Add in specified traits from Trait Activation
+        ...idTraits // Add in specified traits from Trait Activation
       }
     };
     appendIds(payload.properties, payload.context.traits.email); 
 
     // Handle email trait if not coming from ids
-    if (traits && traits.email && !ids.email) {
+    if (idTraits && idTraits.email && !ids.email) {
       if (!payload.context.traits) {
         payload.context.traits = {};
       }
-      payload.context.traits.email = traits.email;
-      delete traits.email;
+      payload.context.traits.email = idTraits.email;
+      // delete traits.email; // (THIS IS DELETING FROM PROPS! NEED TO RENAME THE PROP)
     }
 
-  } else {
+  } else  if (selectedPayloadType === 'identify') {
     delete payload.properties;
- 
+    delete payload.context.traits.email;
+
     payload = {
       ...payload,
       type: selectedPayloadType,
       traits: {
         ...payload.traits, // Use the updated payload traits
         // ...additionalData.traits, // Merge and override with traits from additionalData - REMOVED as this was added for initial stage testing
-        ...traits // Add in specified traits from Trait Activation
+        ...idTraits // Add in specified traits from Trait Activation
       }
     };
     appendIds(payload.traits);

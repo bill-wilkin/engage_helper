@@ -4,7 +4,7 @@ import { SamplePayload } from "../SamplePayload/SamplePayload"
 import { useState } from "react";
 import './Overview.css';
 
-const Overview = ({traits, space, audience, ids}) => {
+const Overview = ({idTraits, space, audience, ids}) => {
     const [selectedPayloadType, setSelectedPayloadType] = useState('track');
 
 
@@ -17,11 +17,11 @@ const Overview = ({traits, space, audience, ids}) => {
             <ButtonBox 
                 handleButtonClick={handleButtonClick}
             />
-            {!traits ? 
+            {!idTraits ? 
             
                 <InfoBox /> : 
                 <SamplePayload 
-                selectedPayloadType={selectedPayloadType} traits={traits} 
+                selectedPayloadType={selectedPayloadType} idTraits={idTraits} 
                 audience={audience}
                 space={space}
                 ids={ids}
