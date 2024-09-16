@@ -1,0 +1,13 @@
+#slide {
+    /* background-color: var(--accent-900);
+    z-index: 10;
+    position: absolute; */
+    cursor: ew-resize;
+    width: 20px;
+    /* height: 100%; */
+    min-height: 20px;
+    justify-self: center;
+    align-self: start;
+    margin-top: 20em;
+    background-color: red;
+}

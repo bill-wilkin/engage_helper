@@ -33,7 +33,7 @@ const MainContainer = () => {
         <div style={{display:"flex", justifyContent:"space-evenly"}}>
             <LeftOverview />
             <Overview 
-                traits={traits} 
+                idTraits={traits} 
                 space={space} 
                 audience={audience}
                 ids={ids}
